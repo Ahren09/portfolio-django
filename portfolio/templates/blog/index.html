@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block page_content %}
+
+{% if blogs %}
+    <ul>
+        {% for blog in blogs %}
+            <li><a href='/blog/{{blog.id}}'>{{blog.id}}: {{blog.blog_title}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>You don't have any blogs. Please add some.</p>
+{% endif %}
+{% endblock %}

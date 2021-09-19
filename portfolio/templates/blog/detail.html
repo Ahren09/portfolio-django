@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+{% if blog %}
+<div class="head">
+    <h1>{{ blog.blog_title }}</h1>
+    <p>{{ blog.blog_time }}</p>
+</div>
+
+<div class="text">
+    {{ blog.blog_body | safe }}
+</div>
+{% else %}
+<p>Blog cannot be displayed</p>
+{% endif %}
+{% endblock %}
