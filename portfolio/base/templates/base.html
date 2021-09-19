@@ -1,0 +1,16 @@
+
+{% extends 'header.html' %}
+<ion-icon name="logo-amazon"></ion-icon>
+
+
+{% block base_content %}
+<ion-icon name="logo-amazon"></ion-icon>
+<div class="jumbotron">
+    <div class="container">
+        {% block page_content %}{% endblock %}
+        111
+    </div>
+    {% include 'footer.html' %}
+</div>
+
+{% endblock %}
