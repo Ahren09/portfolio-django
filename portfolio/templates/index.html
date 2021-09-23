@@ -45,21 +45,16 @@
 <div class="p-4 mb-4 bg-light container-fluid rounded-4">
 
     <div class="row">
-        <div class="card" style="width: 18rem;">
-            <img src="{% static 'img/MSRA/badge_2.jpg' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Microsoft Research Asia (Beijing)</p>
-            </div>
-        </div>
 
-        {% if whatsnew %}
+        {% if interests %}
 
         <div class="h-50 p-5 bg-light rounded-3 col-8">
-            <h2>What's new</h2>
-            {% for news in whatsnew %}
-            <p><b>[{{news.time}}]</b> {{news.desc}}</p>
-            {% endfor %}
-            <!--                <button class="btn btn-outline-secondary" type="button">Example button</button>-->
+            <h2>Research Interests</h2>
+            <ul class="list-group">
+                {% for interest in interests %}
+                <li class="list-group-item">{{interest}}</li>
+                {% endfor %}
+            </ul>
         </div>
         {% endif %}
     </div>

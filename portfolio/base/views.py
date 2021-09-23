@@ -15,10 +15,10 @@ def index(request):
     }, {
         'title': "Amazon",
         "body": "SDE Intern at Amazon (Summer 2020)"
-    },{
+    }, {
         'title': "UCLA",
         "body": "Life in UCLA. Go Bruins!!"
-    },{
+    }, {
         'title': "Beijing",
         "body": "Life in Beijing"
     },
@@ -34,19 +34,26 @@ def index(request):
     }, {
         "time": "Dec. 22th, 2020",
         "desc": "I started to work as a research intern at MSRA",
-    },{
+    }, {
         "time": "Sept. 4th, 2020",
         "desc": "I completed my SDE internship at Amazon (FBA IAR Team)",
     },
     ]
 
-    research = None
+    interests = [
+        "Recommender Systems & Graph-based Recommendation",
+        "Graph Representation Learning",
+        "Graph Neural Networks",
+        "Natural Language Processing & Text Mining",
+    ]
 
     context = {
         "images": images,
         "whatsnew": whatsnew,
+        "interests":interests,
     }
     return render(request, 'index.html', context)
+
 
 def detail(request, topic):
     imgs = os.listdir(f"static/{topic}")
